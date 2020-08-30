@@ -5,7 +5,6 @@ import speech_recognition as sr
 
 def openChrome():
     """ Run """
-    print("test")
     chromedriver_path = r'chromedriver.exe'
     os.environ['webdriver.chrome.driver'] = chromedriver_path
     browser = webdriver.Chrome(chromedriver_path)
@@ -26,6 +25,7 @@ def recognizeAudio():
         command = r.recognize_google(audio)
         print("You said " + command)
         if command.startswith("open"):
+            print(command.split())
             openChrome()
 
     except sr.UnknownValueError:
