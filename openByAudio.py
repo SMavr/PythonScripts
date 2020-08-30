@@ -3,7 +3,7 @@ from selenium import webdriver
 import speech_recognition as sr
 
 
-def run2():
+def recognizeAudio():
     # get audio from the microphone
     r = sr.Recognizer()
     with sr.Microphone() as source:
@@ -11,11 +11,21 @@ def run2():
         audio = r.listen(source)
 
     try:
-        print("You said " + r.recognize_google(audio))
+        command = r.recognize_google(audio)
+        print("You said " + command)
+        switcher.get(command)
     except sr.UnknownValueError:
         print("Could not understand audio")
     except sr.RequestError as e:
         print("Could not request results; {0}".format(e))
+
+
+def open():
+    print("Open!!@!")
+
+switcher = {
+    "open": open(),
+}
 
 
 def run():
@@ -29,4 +39,4 @@ def run():
     # browser.quit()
 
 if __name__ == "__main__":
-    run2()
+    recognizeAudio()
