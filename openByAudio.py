@@ -24,9 +24,9 @@ def recognizeAudio():
     try:
         command = r.recognize_google(audio)
         print("You said " + command)
-        if command.startswith("open"):
-            second_word = command.split()[1]
-            openChrome(second_word)
+        command_arguments = command.split()
+        if command_arguments[0] == "open" and len(command_arguments) > 1:
+            openChrome(command_arguments[1])
 
     except sr.UnknownValueError:
         print("Could not understand audio")
