@@ -3,8 +3,9 @@ from selenium import webdriver
 import speech_recognition as sr
 
 
-def run():
+def openChrome():
     """ Run """
+    print("test")
     chromedriver_path = r'chromedriver.exe'
     os.environ['webdriver.chrome.driver'] = chromedriver_path
     browser = webdriver.Chrome(chromedriver_path)
@@ -23,8 +24,10 @@ def recognizeAudio():
 
     try:
         command = r.recognize_google(audio)
+        if command == "open":
+            openChrome()
+        # switcher.get(command)
         print("You said " + command)
-        switcher.get(command)
     except sr.UnknownValueError:
         print("Could not understand audio")
     except sr.RequestError as e:
@@ -32,11 +35,11 @@ def recognizeAudio():
 
 
 def open():
-    run()
+    openChrome()
 
-switcher = {
-    "open": open(),
-}
+# switcher = {
+#     "open": open(),
+# }
 
 
 if __name__ == "__main__":
