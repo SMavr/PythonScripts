@@ -24,22 +24,14 @@ def recognizeAudio():
 
     try:
         command = r.recognize_google(audio)
-        if command == "open":
-            openChrome()
-        # switcher.get(command)
         print("You said " + command)
+        if command.startswith("open"):
+            openChrome()
+
     except sr.UnknownValueError:
         print("Could not understand audio")
     except sr.RequestError as e:
         print("Could not request results; {0}".format(e))
-
-
-def open():
-    openChrome()
-
-# switcher = {
-#     "open": open(),
-# }
 
 
 if __name__ == "__main__":
