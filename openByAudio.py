@@ -6,12 +6,16 @@ import speech_recognition as sr
 def openChrome(word):
     """ Run """
     chromedriver_path = r'chromedriver.exe'
-    os.environ['webdriver.chrome.driver'] = chromedriver_path
+    # os.environ['webdriver.chrome.driver'] = chromedriver_path
     browser = webdriver.Chrome(chromedriver_path)
+    # browser.get('https://www.in.gr')
     browser.get('https://www.youtube.com/results?search_query=' + word)
-    ##link_elem = browser.find_element_by_link_text('Οικονομία')
+    while(True):
+        pass
+    # link_elem = browser.find_element_by_link_text('Οικονομία')
     # link_elem.click()
     # browser.quit()
+    # browser.close()
 
 
 def recognizeAudio():
@@ -35,4 +39,5 @@ def recognizeAudio():
 
 
 if __name__ == "__main__":
+    # openChrome('test')
     recognizeAudio()
