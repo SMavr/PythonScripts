@@ -1,9 +1,15 @@
 history
 which
+
 ls -a [A[A[C: shows history[B[B[A[D[D[D[1;5D[1;5D[1;5D[1;5D[1;5D[1;5D[1;5D[1;5D[1;5D[1;5D[1;5D[1;5D[1;5D[1;5D: find where[B[1;5D[1;5D[1;5D[1;5D[1;5D[1;5D[1;5D[1;5D[1;5D[1;5D[1;5D[1;5D: see list of visible and hidden files
-whatis: displays what does the folloing commmandcp ~/.bashrc bashrc: copy bashrc to the given folder
+
+whatis: displays what does the following commmand
+
+cp ~/.bashrc bashrc: copy bashrc to the given folder
 
 mv bashrc.bak bashrc: Move bashrc.bak to bashrc
 
 rm file* : remove all files which start with file
 !459 : execute line 459
+rmdir : remove dir
+less file1 : read from file1 (more is not implemeted in windows)
